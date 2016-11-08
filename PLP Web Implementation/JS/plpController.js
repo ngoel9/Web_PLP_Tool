@@ -85,4 +85,234 @@ app.controller('idectrl', [ '$scope', '$cookies', '$http', function( $scope, $co
         }
     };
 
+    $scope.openLED = function() {
+        //console.log(Jquery.ui);
+        //alert("okay");
+        $('#window').prepend($("<div class='draggable ui-widget-content'>" +
+            "   <h4>LED Array I/O</h4>"+
+            "   <label for='address'>Address:</label>"+
+            "   <input type='text' id='address' value='0xf0200000' disabled/>" +
+            "   <label for='value'>Value:</label>"+
+            "   <input type='text' id='value' value='0x00000000' disabled/>"+
+            "   </br></br>"+
+            "   <label class='switchled'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led1'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switchled'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led2'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switchled'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led3'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switchled'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led4'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switchled'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led5'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switchled'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led6'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switchled'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led7'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switchled'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led8'></div>"+
+            "       </div>"+
+            "   </label>"+
+            " </div>", {
+        }).draggable());
+    };
+
+    $scope.openSwitches = function() {
+        $('#window').prepend($("<div class='draggable ui-widget-content'>" +
+            "   <h4>Switches</h4>"+
+            "   <label for='address'>Address:</label>"+
+            "   <input type='text' id='address' placeholder='0xf0200000'/>" +
+            "   <label for='value'>Value:</label>"+
+            "   <input type='text' id='value' placeholder='0x00000000'/>"+
+            "   <br><br><br>"+
+            "   <label class='switch'>"+
+            "       <input type='checkbox'>"+
+            "       <div class='slider'></div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <input type='checkbox'>"+
+            "       <div class='slider'></div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <input type='checkbox'>"+
+            "       <div class='slider'></div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <input type='checkbox'>"+
+            "       <div class='slider'></div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <input type='checkbox'>"+
+            "       <div class='slider'></div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <input type='checkbox'>"+
+            "       <div class='slider'></div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <input type='checkbox'>"+
+            "       <div class='slider'></div>"+
+            "   </label>" +
+            "   <label class='switch'>"+
+            "       <input type='checkbox'>"+
+            "       <div class='slider'></div>"+
+            "   </label><br><br><br><br>" +
+            " </div>", {
+        }).draggable());
+    };
+
+    $scope.open7Segment = function() {
+        $('#window').prepend($("<div class='draggable ui-widget-content'>" +
+        "   <h4>Seven Segment Display</h4>"+
+             "   <label for='address'>Address:</label>"+
+            "   <input type='text' id='address' placeholder='0xf0200000'/>" +
+            "   <label for='value'>Value:</label>"+
+            "   <input type='text' id='value' placeholder='0x00000000'/>  </br></br>"+
+            // "   </br></br> <input type='text' id='valueText' />"+
+            "   <div class='medium-7-seg' id='sevenSegmentArray'></div>" +
+            " </div>", {
+        }).draggable());
+        $("#sevenSegmentArray").sevenSeg({ digits: 4 });
+        // $("#valueText").keyup(function(){
+        //     $("#sevenSegmentArray").sevenSeg({ value: this.value });
+        // });
+    };
+
+    $scope.openUART = function() {
+        /*$('#window').prepend($("<div/>", {
+            "class": "draggable ui-widget-content",
+            text: "open UART",
+        }).resizable().draggable());*/
+        $('#window').prepend($("<div class='draggable ui-widget-content'>" +
+            "<img src='../images/sevensegment.PNG'/>" +
+            " </div>", {
+        })).draggable();
+    };
+
+    $scope.openVGA = function() {
+        $('#window').prepend($("<div class='draggable ui-widget-content'>" +
+            "<img src='../images/sevensegment.PNG'/>" +
+            " </div>", {
+        }).draggable());
+    };
+
+    $scope.openGPIO = function() {
+        $('#window').prepend($("<div class='draggable ui-widget-content'>" +
+            "   <h4>GPIO Module</h4>"+
+            "   <label for='value'>Tristate Register Contents:</label>"+
+            "   <input type='text' id='value' value='' disabled/>"+
+            "   </br></br>"+
+            "   <label class='switch'>"+
+            "       <label>Port A:</label>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led1'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led2'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led3'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led4'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led5'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led6'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led7'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led8'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "  <br><br><hr><br><br>" +
+            "   <label class='switch'>"+
+            "       <label>Port B:</label>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led9'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led10'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led11'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led12'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led13'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led14'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led15'></div>"+
+            "       </div>"+
+            "   </label>"+
+            "   <label class='switch'>"+
+            "       <div class='led-box'>"+
+            "           <div class='led-black' id='led16'></div>"+
+            "       </div>"+
+            "   </label>"+
+            " </div>", {
+        }).draggable());
+    };
+
 }]);

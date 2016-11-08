@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../CSS/jqx.base.css" type="text/css" />
+    <link rel="stylesheet" href="../JS/bower_components/jqwidgets/jqwidgets/styles/jqx.base.css" type="text/css" />
 
-    <script type="text/javascript" src="../JS/Libraries/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="../JS/bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="../JS/bower_components/jquery-ui/jquery-ui.min.js"></script>
 
-    <script src="../JS/Libraries/angular.min.js"></script>
-    <script src="../JS/Libraries/angular-cookies.min.js"></script>
+    <script src="../JS/bower_components/angular/angular.min.js"></script>
+    <script src="../JS/bower_components/angular-cookies/angular-cookies.min.js"></script>
 
-    <script type="text/javascript" src="../JS/jqwidgets/jqxcore.js"></script>
-    <script type="text/javascript" src="../JS/jqwidgets/jqxsplitter.js"></script>
+    <script type="text/javascript" src="../JS/bower_components/jqwidgets/jqwidgets/jqxcore.js"></script>
+    <script type="text/javascript" src="../JS/bower_components/jqwidgets/jqwidgets/jqxsplitter.js"></script>
+    <script type="text/javascript" src="../JS/sevenSeg.js"></script>
 
 
     <script src="../JS/plpController.js"></script>
@@ -59,13 +61,13 @@
                 <button type="button" title="Remote"><img src="../images/toolbar_remote.png"></button>
                 <button type="button" title="CPU"><img src="../images/toolbar_cpu.png"></button>
                 <button type="button" title="Watcher"><img src="../images/toolbar_watcher.png"></button>
-                <button type="button" title="Simulation LEDs"><img src="../images/toolbar_sim_leds.png"></button>
-                <button type="button" title="Simulation Switches"><img src="../images/toolbar_sim_switches.png"></button>
-                <button type="button" title="Simulation 7-segment"><img src="../images/toolbar_sim_7segments.png"></button>
-                <button type="button" title="Simulation UART"><img src="../images/toolbar_sim_uart.png"></button>
-                <button type="button" title="Simulation VGA"><img src="../images/toolbar_sim_vga.png"></button>
+                <button type="button" title="Simulation LEDs" ng-click="openLED()"><img src="../images/toolbar_sim_leds.png"></button>
+                <button type="button" title="Simulation Switches" ng-click="openSwitches()"><img src="../images/toolbar_sim_switches.png"></button>
+                <button type="button" title="Simulation 7-segment" ng-click="open7Segment()"><img src="../images/toolbar_sim_7segments.png"></button>
+                <button type="button" title="Simulation UART" ng-click="openUART()"><img src="../images/toolbar_sim_uart.png"></button>
+                <button type="button" title="Simulation VGA" ng-click="openVGA()"><img src="../images/toolbar_sim_vga.png"></button>
                 <button type="button" title="Simulation PLP ID"><img src="../images/toolbar_sim_plpid.png"></button>
-                <button type="button" title="Simulation GPIO"><img src="../images/toolbar_sim_gpio.png"></button>
+                <button type="button" title="Simulation GPIO" ng-click="openGPIO()"><img src="../images/toolbar_sim_gpio.png"></button>
                 <button type="button" title="Exclamation"><img src="../images/toolbar_exclamation.png"></button>
             </div>
         </div>
@@ -100,37 +102,9 @@ li $a1 0x110
                             </div>
                         </div>
                         <!--////////////////////////-->
-                        <div style="overflow-y: auto;">
+                        <div id = "window" style="overflow-y: auto;">
                             <!--Sim Stuff-->
                             <div class="tabs">
-
-                                <div class="tab">
-                                    <input type="radio" id="tab-1" name="tab-group-1" checked>
-                                    <label for="tab-1">Tab One</label>
-
-                                    <div class="content">
-                                        Tab1 stuff
-                                    </div>
-                                </div>
-
-                                <div class="tab">
-                                    <input type="radio" id="tab-2" name="tab-group-1">
-                                    <label for="tab-2">Tab Two</label>
-
-                                    <div class="content">
-                                        Tab2 stuff
-                                    </div>
-                                </div>
-
-                                <div class="tab">
-                                    <input type="radio" id="tab-3" name="tab-group-1">
-                                    <label for="tab-3">Tab Three</label>
-
-                                    <div class="content">
-                                        Tab 3 stuff
-                                    </div>
-                                </div>
-
                             </div>
                             <!--1234567890-->
                         </div>
